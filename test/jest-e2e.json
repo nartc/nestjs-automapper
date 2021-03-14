@@ -1,0 +1,25 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@configurations/(.*)$": "<rootDir>/../src/shared/configurations/$1",
+    "@constants/(.*)$": "<rootDir>/../src/shared/constants/$1",
+    "@decorators/(.*)$": "<rootDir>/../src/shared/decorators/$1",
+    "@filters/(.*)$": "<rootDir>/../src/shared/filters/$1",
+    "@interceptors/(.*)$": "<rootDir>/../src/shared/interceptors/$1",
+    "@modules/documents/(.*)$": "<rootDir>/../src/documents/$1",
+    "@shared/(.*)$": "<rootDir>/../src/shared/$1"
+  },
+  "setupFilesAfterEnv": [
+    "jest-extended"
+  ]
+}

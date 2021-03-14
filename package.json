@@ -21,6 +21,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@automapper/classes": "^3.3.0",
+    "@automapper/core": "^3.3.0",
+    "@automapper/nestjs": "^3.3.0",
     "@nestjs/common": "^7.6.12",
     "@nestjs/config": "^0.5.0",
     "@nestjs/core": "^7.6.12",
@@ -46,6 +49,7 @@
     "winston-elasticsearch": "^0.13.0"
   },
   "devDependencies": {
+    "@automapper/types": "^3.3.0",
     "@nestjs/cli": "^7.5.5",
     "@nestjs/schematics": "^7.2.7",
     "@nestjs/testing": "^7.6.12",

@@ -1,34 +1,22 @@
-import { AutoMapper, Profile, ProfileBase } from 'nestjsx-automapper';
-import {
-  Search,
-  SearchCondition,
-  SearchConditionElement,
-  SearchConditions
-} from '../models';
-import {
-  SearchConditionDto,
-  SearchConditionElementDto,
-  SearchConditionsDto,
-  SearchDto
-} from '../dtos';
+import { AutomapperProfile, InjectMapper } from "@automapper/nestjs";
+import { Mapper, MappingProfile } from "@automapper/types";
+import { Injectable } from "@nestjs/common";
+import { SearchConditionDto, SearchConditionElementDto, SearchConditionsDto, SearchDto } from "../dtos";
+import { Search, SearchCondition, SearchConditionElement, SearchConditions } from "../models";
 
-@Profile()
-export class SearchMapper extends ProfileBase {
-  constructor(mapper: AutoMapper) {
-    super();
-    mapper.createMap(SearchConditionElementDto, SearchConditionElement);
-    mapper.createMap(SearchConditionDto, SearchCondition);
-    mapper.createMap(SearchConditionsDto, SearchConditions);
-    mapper.createMap(SearchDto, Search);
+@Injectable()
+export class SearchMapper extends AutomapperProfile {
+  constructor(@InjectMapper() mapper: Mapper) {
+    super(mapper);
+
   }
 
-  static fromDtoToModel(searchDto: SearchDto): Search {
-    return {
-      conditions: searchDto.conditions,
-      sectionElement: searchDto.sectionElement,
-      searchName: searchDto.searchName,
-      docType: searchDto.docType,
-      hasUpdateTotalSearch: searchDto.hasUpdateTotalSearch,
+  mapProfile(): MappingProfile {
+    return mapper => {
+      mapper.createMap(SearchConditionElementDto, SearchConditionElement);
+      mapper.createMap(SearchConditionDto, SearchCondition);
+      mapper.createMap(SearchConditionsDto, SearchConditions);
+      mapper.createMap(SearchDto, Search);
     };
   }
 }

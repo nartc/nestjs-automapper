@@ -1,15 +1,24 @@
-import './mappers';
+import { classes } from "@automapper/classes";
+import { CamelCaseNamingConvention } from "@automapper/core";
+import { AutomapperModule } from "@automapper/nestjs";
+import { SearchMapper } from "@modules/documents/mappers";
 
-import { Logger, Module } from '@nestjs/common';
+import { Logger, Module } from "@nestjs/common";
 
-import { AutomapperModule } from 'nestjsx-automapper';
-import { ConfigService } from '@nestjs/config';
-import { DocumentController } from './document.controller';
-import { DocumentService } from './document.service';
+import { ConfigService } from "@nestjs/config";
+import { DocumentController } from "./document.controller";
+import { DocumentService } from "./document.service";
+import "./mappers";
 
 @Module({
-  imports: [AutomapperModule.withMapper()],
+  imports: [AutomapperModule.forRoot({
+    singular: true,
+    options: [
+      { name: "classes", pluginInitializer: classes, namingConventions: new CamelCaseNamingConvention() }
+    ]
+  })],
   controllers: [DocumentController],
-  providers: [DocumentService, Logger, ConfigService],
+  providers: [SearchMapper, DocumentService, Logger, ConfigService]
 })
-export class DocumentModule {}
+export class DocumentModule {
+}

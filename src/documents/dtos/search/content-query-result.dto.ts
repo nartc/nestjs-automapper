@@ -9,7 +9,7 @@ import {
 } from 'class-validator';
 
 import { ApiProperty } from '@nestjs/swagger';
-import { AutoMap } from 'nestjsx-automapper';
+import { AutoMap } from '@automapper/classes';
 import { RankDto } from './rank.dto';
 
 export class ContentQueryResultDto {

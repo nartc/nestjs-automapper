@@ -1,4 +1,4 @@
-import { AutoMap } from 'nestjsx-automapper';
+import { AutoMap } from '@automapper/classes';
 
 export class SearchConditionElement {
   @AutoMap()

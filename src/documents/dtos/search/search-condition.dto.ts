@@ -1,7 +1,7 @@
 import { IsArray, IsEnum, IsNotEmpty } from 'class-validator';
 
 import { ApiProperty } from '@nestjs/swagger';
-import { AutoMap } from 'nestjsx-automapper';
+import { AutoMap } from '@automapper/classes';
 import { SearchConditionElementDto } from './search-condition-element.dto';
 import { SearchConditionType } from '@shared/enums/search-condition-type.enum';
 

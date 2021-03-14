@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { AutoMap } from 'nestjsx-automapper';
+import { AutoMap } from '@automapper/classes';
 import { IsNotEmpty } from 'class-validator';
 import { SearchConditionDto } from './search-condition.dto';
 

@@ -1,4 +1,4 @@
-import { AutoMap } from 'nestjsx-automapper';
+import { AutoMap } from '@automapper/classes';
 import { SearchCondition } from './search-condition.model';
 
 export class SearchConditions {

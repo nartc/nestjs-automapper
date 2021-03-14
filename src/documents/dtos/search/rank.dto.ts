@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsNumber } from 'class-validator';
 
 import { ApiProperty } from '@nestjs/swagger';
-import { AutoMap } from 'nestjsx-automapper';
+import { AutoMap } from '@automapper/classes';
 
 export class RankDto {
   @ApiProperty({

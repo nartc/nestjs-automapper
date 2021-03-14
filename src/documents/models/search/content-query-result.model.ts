@@ -1,4 +1,4 @@
-import { AutoMap } from 'nestjsx-automapper';
+import { AutoMap } from '@automapper/classes';
 import { Rank } from './rank.model';
 
 export class ContentQueryResult {

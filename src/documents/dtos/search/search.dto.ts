@@ -1,7 +1,7 @@
 import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
 
 import { ApiProperty } from '@nestjs/swagger';
-import { AutoMap } from 'nestjsx-automapper';
+import { AutoMap } from '@automapper/classes';
 import { SearchConditionsDto } from './search-conditions.dto';
 
 export class SearchDto {

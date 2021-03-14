@@ -1,3 +1,5 @@
+import { InjectMapper } from "@automapper/nestjs";
+import { Mapper } from "@automapper/types";
 import { API_DOCUMENTS, PATH_SEARCH_CONTENT } from '@constants/api.constants';
 import { ERRORS } from '@constants/messages.constants';
 import { BaseController } from '@decorators/base-controller.decorator';
@@ -12,7 +14,6 @@ import {
   LoggerService,
   Post
 } from '@nestjs/common';
-import { AutoMapper, InjectMapper } from 'nestjsx-automapper';
 import { DocumentService } from './document.service';
 import { ContentQueryResultDto, SearchDto } from './dtos';
 import { ContentQueryResult, Search } from './models';
@@ -22,7 +23,7 @@ import { ContentQueryResult, Search } from './models';
 export class DocumentController {
   constructor(
     @Inject(Logger) private readonly logger: LoggerService,
-    @InjectMapper() private readonly mapper: AutoMapper,
+    @InjectMapper() private readonly mapper: Mapper,
     private readonly documentService: DocumentService
   ) {}
 
